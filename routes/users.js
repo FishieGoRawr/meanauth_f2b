@@ -42,6 +42,7 @@ router.post('/authenticate', (req, res, next) => {
                     expiresIn: 604800
                 })
 
+                res.setHeader('Authorization', token)
                 res.json({
                     success: true,
                     token: 'JWT ' + token,
